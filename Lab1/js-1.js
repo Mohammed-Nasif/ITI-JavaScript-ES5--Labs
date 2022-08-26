@@ -101,8 +101,8 @@ console.log(strCheckCounter(mainStr, subStr));
 // 6 [Bonus] - Write a function to print the following pattern according to keyword and counts [Bonus]
 
 function drawPattern(direction, counter) {
-	let result;
-	let countNum = parseInt(counter);
+	var result;
+	var countNum = parseInt(counter);
 	if (direction == 'increase' && countNum > 0) {
 		for (let i = 1; i <= countNum; i++) {
 			scr = [];
