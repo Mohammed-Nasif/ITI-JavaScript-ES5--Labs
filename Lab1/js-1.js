@@ -2,7 +2,6 @@
 
 function showUsername() {
 	var userName = prompt('Please Enter Your Username:');
-	console.log(userName);
 	if (userName) {
 		// 1st Condition if User Entered His UserName
 		return userName.trim();
