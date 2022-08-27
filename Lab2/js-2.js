@@ -14,7 +14,7 @@ console.log(resArray); // Expected Output : [4, 5, 8, 10, 12, 13]
 var array1 = [1, 0, 2, 3, 4];
 var array2 = [3, 5, 6, 7, 8, 13];
 var bigArray = array1;
-var smallArray = array1;
+var smallArray = array2;
 if (array1.length < array2.length) {
 	bigArray = array2;
 	smallArray = array1;
