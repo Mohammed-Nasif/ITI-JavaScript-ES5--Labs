@@ -172,7 +172,7 @@ output: menna…@gmail.com
 
 // -> Method 1: Regex
 var ipEmail = 'menna-Mohamed@gmail.com';
-var ipEmail = 'm.khaled100@gmail.com';
+// var ipEmail = 'm.khaled100@gmail.com';
 function emailReformatter(emailStr) {
 	var reqPartRegex = /\W[a-zA-Z0-9]*(?=@)/g;
 	// console.log(emailStr.match(reqPartRegex));
@@ -182,7 +182,7 @@ console.log(emailReformatter(ipEmail)); // menna…@gmail.com
 
 // -> Method 2: Splice
 var ipEmail = 'menna-Mohamed@gmail.com';
-var ipEmail = 'm.khaled100@gmail.com';
+// var ipEmail = 'm.khaled100@gmail.com';
 var specialChar = "!#$%&'*+-/=?^_`{|}~."; // Ref stackoverflow
 function emailReformatter(emailStr) {
 	var emailArr = emailStr.split('');
