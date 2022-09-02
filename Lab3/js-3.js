@@ -1,3 +1,5 @@
+// --------------------------------[Question 1]----------------------------------------
+
 // Q1 - Alert Properties From Object except Functions
 
 var personalData = {
@@ -8,13 +10,17 @@ var personalData = {
 		alert(this.Name + this.Age + this.Track);
 	},
 };
-// Method 1 :
+
+// -> Method 1:
 function emailReformatter(ipData) {
-	alert(JSON.stringify(ipData));
+	var filteredObj = JSON.parse(JSON.stringify(ipData));
+	for (key in filteredObj) {
+		alert(key + ': ' + filteredObj[key]);
+	}
 }
 emailReformatter(personalData);
 
-//Method 2:
+// -> Method 2:
 function emailReformatter(ipData) {
 	for (key in ipData) {
 		if (typeof ipData[key] != 'function') alert(key + ': ' + ipData[key]);
@@ -22,7 +28,7 @@ function emailReformatter(ipData) {
 }
 emailReformatter(personalData);
 
-// ------------------------------------------------------------------------
+// --------------------------------[Question 2]----------------------------------------
 
 // Q2 - Write a JavaScript program to remove duplicate items from an array
 
@@ -73,7 +79,7 @@ function removeDuplicate4(ipArr) {
 }
 console.log(removeDuplicate4(randomArray3)); // Expected OutPut = [1, 'Nasif', 2, 3, 'Ragab', 5]
 
-// ------------------------------------------------------------------------
+// --------------------------------[Question 3]----------------------------------------
 
 // Q3
 /*
@@ -82,12 +88,17 @@ console.log(removeDuplicate4(randomArray3)); // Expected OutPut = [1, 'Nasif', 2
 (ex: “Ahmed goes to school by bus” 🡪 6 words)
 */
 
-// var ipStr = prompt('Please Enter Your String');
-var ipStr = 'Ahmed goes to school by bus';
-var wordsCount = ipStr.trim().split(' ').length;
-console.log(wordsCount);
+function strWordCount() {
+	var ipStr = prompt('Please Enter Your String');
+	if (ipStr !== '' && ipStr !== null) {
+		var wordsCount = ipStr.trim().split(' ').length;
+		// console.log(wordsCount);
+		alert('Words Count is ' + wordsCount);
+	}
+}
+strWordCount();
 
-// ------------------------------------------------------------------------
+// --------------------------------[Question 4]----------------------------------------
 
 // Q4 - Create a function that accepts a string and returns the number of vowels in that string (vowel characters are : a, e, o, u, i)
 /*
@@ -95,17 +106,25 @@ console.log(wordsCount);
 • Count the number of vowels in that string using the created function.
 */
 
-var vowels = ['a', 'e', 'o', 'u', 'i'];
-// var randomText = prompt('Please Enter Your String');
-var randomText = 'dream';
-function vowelsCount(ipText) {
-	return ipText.split('').filter(function (letter) {
-		return vowels.includes(letter);
+// -> Method 1:
+function vowelsCount() {
+	var vowels = ['a', 'e', 'o', 'u', 'i'];
+	var randomText = prompt('Please Enter Your String');
+	return randomText.split('').filter(function (letter) {
+		return vowels.includes(letter.toLowerCase());
 	}).length;
 }
-console.log(vowelsCount(randomText)); //Expected Output : 2
+console.log(vowelsCount()); //Expected Output : 2 if Entered "dream"
 
-// ------------------------------------------------------------------------
+// -> Method 2 - Regex:
+function vowelsCount() {
+	var regexPattern = /[aeoui]/gi;
+	var randomText = prompt('Please Enter Your String');
+	return randomText.match(regexPattern).length;
+}
+console.log(vowelsCount()); //Expected Output : 2 if Entered "dream"
+
+// --------------------------------[Question 5]----------------------------------------
 
 // Q5 -
 /*
@@ -115,30 +134,35 @@ console.log(vowelsCount(randomText)); //Expected Output : 2
 • Ask the user if he wants to check for another number ,keep asking the user to enter the number until he clicks no
 */
 
-var ipNum = prompt('Please Enter A Random +ve Integer');
-while (ipNum) {
-	function factorial(ipNum) {
-		var result = 1;
-		if (ipNum > 1) {
-			result = ipNum * factorial(ipNum - 1);
-		}
-		return result;
+while (true) {
+	var ipNum = prompt('Please Enter A Random +ve Integer');
+	if (ipNum === null || ipNum === '') {
+		// Cancel Case or ok without Input (User Change His Opinon ^^)
+		break;
 	}
-	alert(factorial(ipNum)); // ipNum = 5 => outPut = 120
-	ipNum = prompt('Please Enter A Random +ve Integer');
+	if (parseInt(ipNum)) {
+		function factorial(ipNum) {
+			var result = 1;
+			if (ipNum === 0) return result;
+			if (ipNum > 1) {
+				result = ipNum * factorial(ipNum - 1);
+			}
+			return result;
+		}
+		alert(factorial(parseInt(ipNum))); // ipNum = 5 => outPut = 120
+	}
 }
 
-// ------------------------------------------------------------------------
+// --------------------------------[Question 6]----------------------------------------
 
 // Q6 - write a function called every time user click on button and print random number between 1 and 10
 
-// var btn = document.querySelector('button');
 var textPanel = document.querySelector('h2');
 function ranNum() {
 	textPanel.innerHTML = Math.ceil(Math.random() * 10);
 }
 
-// ------------------------------------------------------------------------
+// --------------------------------[Question 7]----------------------------------------
 
 /// Q7 - write a function to hide email addresses to protect it (we add … at the first special character)
 /*
@@ -146,18 +170,20 @@ Input : menna-Mohamed@gmail.com
 output: menna…@gmail.com
 */
 
-// Using Regex
+// -> Method 1: Regex
 var ipEmail = 'menna-Mohamed@gmail.com';
+var ipEmail = 'm.khaled100@gmail.com';
 function emailReformatter(emailStr) {
 	var reqPartRegex = /\W[a-zA-Z0-9]*(?=@)/g;
 	// console.log(emailStr.match(reqPartRegex));
 	return emailStr.replaceAll(reqPartRegex, '...');
 }
-console.log(emailReformatter(ipEmail));
+console.log(emailReformatter(ipEmail)); // menna…@gmail.com
 
-// Using Splice
+// -> Method 2: Splice
 var ipEmail = 'menna-Mohamed@gmail.com';
-var specialChar = "!#$%&'*+-/=?^_`{|}~"; // Ref stackoverflow
+var ipEmail = 'm.khaled100@gmail.com';
+var specialChar = "!#$%&'*+-/=?^_`{|}~."; // Ref stackoverflow
 function emailReformatter(emailStr) {
 	var emailArr = emailStr.split('');
 	for (var i = 0; i < emailArr.length; i++) {
