@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+			#data-container {
+				margin-top: 20px;
+				border: 2px solid black;
+				width: 400px;
+				min-height: 50px;
+				padding: 20px;
+			}
+			.std {
+				margin: 20px 0;
+			}
+			.deleteStd {
+				margin-left: 10px;
+				border-radius: 50%;
+				border: 1px solid grey;
+				color: red;
+				font-size: 10px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<!--Task 1-->
+		<!-- <h2>Hello I am h2</h2>
+		<h2>Hello I am h2</h2>
+		<h2>Hello I am h2</h2>
+		<h2>Hello I am h2</h2>
+		<h2>Hello I am h2</h2> -->
+		<!--Task 1-->
+
+		<!--Task 2-->
+		<div style="margin-top: 50px">
+			<input type="text" placeholder="Search Input" id="srchInp" />
+			<button id="searchBtn" disabled>OK</button>
+		</div>
+		<div id="data-container">
+			<button id="addStd">Add New Student</button>
+			<div id="stdList">
+				<!-- <div class="std">
+					Mohammed Nasif
+					<button class="deleteStd"> X </button>
+				</div> -->
+			</div>
+		</div>
+		<!--Task 2-->
+
+		<!--Task 3-->
+		<!-- <h1 id="clock">
+			<span id="hrs"></span>
+			<span>:</span>
+			<span id="mins"></span>
+			<span>:</span>
+			<span id="secs"></span>
+			<span id="d-n"></span>
+		</h1>
+		<div id="date"> </div> -->
+		<!--Task 3-->
+
+		<!--Task 4-->
+		<h1 id="Timer">
+			<span id="hrs">00</span>
+			<span>:</span>
+			<span id="mins">00</span>
+			<span>:</span>
+			<span id="secs">00</span>
+		</h1>
+		<!--Task 4-->
+
+		<script src="js/main.js"></script>
+	</body>
+</html>
