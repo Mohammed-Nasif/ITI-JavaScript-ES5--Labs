@@ -28,8 +28,8 @@ function addStd() {
 	var addBtn = document.getElementById('addStd');
 	addBtn.addEventListener('click', function () {
 		var ipStdName = prompt('Please Enter Student Name:');
-		// Input Validation
-		if (ipStdName && isNaN(ipStdName.trim())) {
+		// Input Validation [Input Not Empty and Accept Only Letters (No Special Char or Nums)]
+		if (ipStdName && /[a-zA-Z]$/.test(ipStdName.trim())) {
 			stdArray.push(ipStdName);
 			reRender();
 		}
@@ -96,16 +96,15 @@ function searchStd() {
 		var allStd = Array.from(document.getElementsByClassName('std'));
 		allStd.forEach(function (std) {
 			var stdName = std.innerText;
-			if (stdName !== searchField.value + 'X') {
+			if (stdName.toLowerCase() !== (searchField.value + 'X').toLowerCase()) {
+				// Handel The Lower And Upper Case in Search
 				std.style.display = 'none';
 			}
 		});
 	}
 }
 // Also Can Use Onchange - oninput - onblur as Eventlisteners without the Ok Key
-searchBtn.addEventListener('click', function () {
-	searchStd();
-});
+searchBtn.addEventListener('click', searchStd);
 // --------------------------------[3rd Task]----------------------------------------
 // 3 - Make A synced Clock
 var monthArray = [
