@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+			#work {
+				margin-top: 30px;
+				font-size: 20px;
+			}
+			#break {
+				margin-top: 30px;
+				margin-bottom: 70px;
+				font-size: 20px;
+			}
+			button {
+				border: 1px solid black;
+				cursor: pointer;
+				width: 100px;
+				height: 40px;
+				border-radius: 10px;
+				margin-right: 10px;
+			}
+			.active {
+				background-color: rgb(108, 232, 197);
+				color: black;
+			}
+			.deactive {
+				background-color: gray;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="color: rgb(108, 232, 197)">Pomodoro Timer</h1>
+		<div id="work">
+			<span>Work Time</span>
+			<span id="w-hrs">00</span>
+			<span>:</span>
+			<span id="w-mins">00</span>
+			<span>:</span>
+			<span id="w-secs">00</span>
+		</div>
+		<div id="break">
+			<span>Break Time</span>
+			<span id="b-hrs">00</span>
+			<span>:</span>
+			<span id="b-mins">00</span>
+			<span>:</span>
+			<span id="b-secs">00</span>
+		</div>
+		<div id="ctrl-btns">
+			<button id="start-w" class="active">Start Work</button>
+			<button id="start-b" class="deactive" disabled>Start Break</button>
+			<button id="res-w" class="deactive" disabled>Resume Work</button>
+			<button id="end-w" class="deactive" disabled>End Work</button>
+		</div>
+		<script src="js/script1_Optimized.js"></script>
+	</body>
+</html>
