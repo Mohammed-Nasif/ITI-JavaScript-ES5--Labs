@@ -11,8 +11,8 @@ var startBBtn = document.getElementById('start-b');
 var resumeWBtn = document.getElementById('res-w');
 var endWBtn = document.getElementById('end-w');
 function valueFormatter(value) {return value < 10 ? "0" + value : value;}  // Function To Formate Value On Dom
-function activeBtn(btn){btn.disabled = false; btn.className = 'active';} // Function To Active The Passed Btn
-function deActiveBtn(btn){btn.disabled = true; btn.className = 'deactive';} // Function To Deactive The Passed Btn
+function activeBtn(btn){btn.disabled = false; btn.className = 'active';} // Function To Activate The Passed Btn
+function deActiveBtn(btn){btn.disabled = true; btn.className = 'deactive';} // Function To Deactivate The Passed Btn
 var intervalsFlags = [];
 
 function startTimer(hrsDom, minsDom, secsDom, flagIndex, startTime) {
